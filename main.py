@@ -9,3 +9,8 @@ sent = ['The glass of milk',
         'your videos are good',]
 
 print(sent)
+
+voc_size = 10000
+
+onehot_repr = [one_hot(words,voc_size) for words in sent]
+print(onehot_repr)
