@@ -22,3 +22,13 @@ print(onehot_repr)
 sent_len = 8
 embedded_docs = pad_sequences(onehot_repr,padding = 'pre',maxlen=sent_len)
 print(embedded_docs)
+
+dim= 10
+model = Sequential()
+model.add(Embedding(voc_size,10,input_length=sent_len))
+model.compile('adam','mse')
+model.summary()
+
+print(model.predict(embedded_docs))
+print(embedded_docs[0])
+print(model.predict(embedded_docs)[0])
